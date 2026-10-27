@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Luxury Color Palette */
+  --color-bg: #08090b;
+  --color-surface: #131519;
+  --color-surface-hover: #1b1e24;
+  --color-surface-raised: #20242c;
+  --color-border: #222630;
+  --color-border-subtle: #181a20;
+  --color-border-highlight: #393f4e;
+
+  /* Typography Colors */
+  --color-text-primary: #f5f4f0;
+  --color-text-secondary: #a5a7ad;
+  --color-text-tertiary: #686b74;
+  
+  /* Accents */
+  --color-accent-silver: #b8bec8;
+  --color-accent-silver-glow: rgba(184, 190, 200, 0.15);
+  --color-accent-champagne: #c7ad86;
+  --color-accent-champagne-glow: rgba(199, 173, 134, 0.2);
+
+  /* Semantic Feedback */
+  --color-success: #10b981;
+  --color-error: #f43f5e;
+  --color-focus: #c7ad86;
+
+  /* 8px Grid Spacing Variables */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-10: 80px;
+  --space-12: 96px;
+  --space-16: 128px;
+}
+
+/* Light Theme Variables (enabled dynamically if theme toggled) */
+[data-theme="light"] {
+  --color-bg: #f8f8fa;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f2f5;
+  --color-surface-raised: #e9ebf0;
+  --color-border: #dcdfe5;
+  --color-border-subtle: #eaecee;
+  --color-border-highlight: #b0b6c2;
+
+  --color-text-primary: #0a0b0d;
+  --color-text-secondary: #585c66;
+  --color-text-tertiary: #878c97;
+
+  --color-accent-silver: #4d5460;
+  --color-accent-silver-glow: rgba(77, 84, 96, 0.12);
+  --color-accent-champagne: #9e7f55;
+  --color-accent-champagne-glow: rgba(158, 127, 85, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Manrope', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  letter-spacing: -0.01em;
+}
+
+/* Custom Scrollbar for Luxury Aesthetic */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #252830;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3c4150;
+}
+
+/* Accessible Focus States */
+:focus-visible {
+  outline: 2px solid var(--color-accent-champagne);
+  outline-offset: 3px;
+}
+
+/* Glassmorphism & Backdrop Utilities */
+.glass-panel {
+  background: rgba(19, 21, 25, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+}
+
+.glass-pill {
+  background: rgba(19, 21, 25, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Subtle Vignette & Studio Lighting Overlay */
+.cinematic-vignette {
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(8, 9, 11, 0.85) 100%);
+}
+
+.cinematic-film-grain {
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
